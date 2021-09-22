@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <Nav />
-    <main>
-      <Left />
-      <Right />
+    <main class="container d-flex">
+      <Left class="col-lg-8 " />
+      <Right class="col-lg-4 px-3" />
     </main>
   </div>
 </template>
@@ -27,5 +27,9 @@ export default {
 <style lang="scss">
 
 @import './style/general';
+main{
+  padding-top:120px;
+  
+}
 
 </style>

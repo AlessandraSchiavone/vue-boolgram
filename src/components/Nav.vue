@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="nav container d-flex justify-content-around align-items-center">
+        <div class="nav container d-flex justify-content-between align-items-center">
             <div class="logo">
                 <img src="../assets/logo.png" alt="Logo Boolgram">
             </div>
@@ -25,6 +25,7 @@ export default {
 header{
     height:60px;
     width:100%;
+    background-color: white;
     border-bottom:1px solid lightgrey;
     position:fixed;
     top:0;
@@ -33,7 +34,7 @@ header{
         height:100%;
         .logo{
             img{
-               height:40px;    
+               height:35px;    
             }
             &:hover{
                     cursor:pointer;

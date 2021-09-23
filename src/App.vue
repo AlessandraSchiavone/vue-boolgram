@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <Nav />
-    <main class="container d-flex">
-      <Left class="col-lg-8 " />
-      <Right class="col-lg-4 px-3" />
+    <main class="container ">
+      <div class="row d-flex">
+        <Left class="col-lg-7" />
+        <Right class="col-lg-4 offset-lg-1" />
+      </div>
     </main>
   </div>
 </template>

@@ -25,6 +25,7 @@ export default {
 header{
     height:60px;
     width:100%;
+    z-index:1;
     background-color: white;
     border-bottom:1px solid lightgrey;
     position:fixed;

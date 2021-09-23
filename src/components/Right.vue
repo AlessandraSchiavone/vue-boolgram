@@ -71,8 +71,8 @@ export default {
   .account{
     height:70px;
     .circle-lg{
-      width:50px;
-      height:50px;
+      width:70px;
+      height:70px;
       border-radius:50%;
       background-image: url(../assets/profile.jpg);
       background-size: contain;
@@ -99,6 +99,7 @@ export default {
       img{
         width:40px;
         height:40px;
+        object-fit: cover;
         border-radius:50%;
         height:100%;
       }

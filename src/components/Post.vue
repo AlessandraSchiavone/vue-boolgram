@@ -68,11 +68,11 @@
             <span class="text-grey"> {{differenceDate(item.date.date)}} ore fa </span>
           </div> 
         </div>
-        <div class="new-comment p-3 d-flex justify-content-between align-items-center">
-            <div>
-              <input class="py-2" type="text" placeholder=" Aggiungi un nuovo commento" v-model="newComment" >
+        <div class=" m-0 row new-comment  d-flex justify-content-between align-items-center">
+            <div class="p-3 col-lg-10">
+              <input class=" px-1 py-2" type="text" placeholder=" Aggiungi un nuovo commento" v-model="newComment" >
             </div>
-            <div>
+            <div class=" p-3 col-lg-2">
               <a class="py-2" @click="addNewComment()" >Pubblica</a>
             </div>
         </div>
@@ -180,7 +180,7 @@ export default {
       .new-comment{
         border-top:1px solid lightgrey;
         input{
-          width:500px;
+          width:100%;
           height:100%;
           // padding:10px 2px;
           border:none;

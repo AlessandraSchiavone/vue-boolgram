@@ -3,15 +3,15 @@
     <div class="account d-flex justify-content-between align-items-center">
       <div class="circle-lg"></div>
       <div class="username">
-        <h5>michelepapagni</h5>
-        <h6><span>Michele Papagni</span></h6>
+        <h5>alessandra.schiavone</h5>
+        <h6><span>Alessandra Schiavone</span></h6>
       </div>
       <div class="premium">
         <a href="">Passa a </a>
       </div>
       
     </div>
-    <div class="hints">
+    <div v-if="loading" class="hints">
       <div class="text d-flex justify-content-between align-items-center">
         <h5><span>Suggerimenti per te</span></h5>
         <h5><strong>Mostra tutti</strong></h5>
@@ -28,6 +28,13 @@
         </div>
       </div>
     </div> 
+    <div v-else class="hints">
+       <div class="text d-flex justify-content-between align-items-center">
+        <h5><span>Suggerimenti per te</span></h5>
+        <h5><strong>Mostra tutti</strong></h5>
+      </div>
+      <HintSkeleton />
+    </div>
     <div class="footer">
       <h6><span>&copy; 2021 Instagram from facebook</span></h6>
       </div>  
@@ -36,23 +43,31 @@
 
 <script>
 import axios from 'axios';
+import HintSkeleton from './Skeleton/HintSkeleton';
 export default {
   name:"Right",
+  components: {
+    HintSkeleton
+  },
   data: function (){
     return{
       apiUrl:'https://flynn.boolean.careers/exercises/api/boolgram/profiles',
       accounts:[],
+      loading:false,
     }
   },
   created:function(){
+    setTimeout(() =>
     axios
       .get(this.apiUrl)
       .then(
         (response) =>{
           this.accounts = response.data;
+          this.loading=true;
         }
       )
-      .catch();
+      .catch(), 2000 )
+    
   }
 
 }

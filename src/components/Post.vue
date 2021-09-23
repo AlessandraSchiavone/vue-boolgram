@@ -61,18 +61,19 @@
             <strong>{{comment.username}}</strong>
             <span class="ps-1">{{comment.text}}</span>
             </div>
+            <small class="view text-grey" @click="ViewComment()"><i class="fas fa-undo-alt"></i></small>
           </div>
           
           <div class="hours pt-2">
             <span class="text-grey"> {{differenceDate(item.date.date)}} ore fa </span>
           </div> 
         </div>
-        <div class="new-comment p-3 d-flex justify-content-between aling-items-center">
+        <div class="new-comment p-3 d-flex justify-content-between align-items-center">
             <div>
-              <span class="text-grey">Aggiungi un nuovo commento</span>
-              </div>
+              <input class="py-2" type="text" placeholder=" Aggiungi un nuovo commento" v-model="newComment" >
+            </div>
             <div>
-              <a href="">Pubblica</a>
+              <a class="py-2" @click="addNewComment()" >Pubblica</a>
             </div>
         </div>
       </div>
@@ -88,6 +89,7 @@ export default {
     return {
         flagheart: false,
         flagcomment:false,
+        newComment:"",
       }
     },
     methods: {
@@ -102,6 +104,15 @@ export default {
           const today = new Date().getTime();
           var difference = Math.floor((today - oldDate)/ (1000*60*60));
           return difference;
+        },
+        addNewComment: function(){
+         if(this.newComment.trim().length > 0){
+           this.item.comments.push({
+             username:'alessandra.schiavone',
+             text: this.newComment
+           })
+           this.newComment = ""; 
+         }
         }
     }
 }
@@ -168,10 +179,26 @@ export default {
       }
       .new-comment{
         border-top:1px solid lightgrey;
+        input{
+          width:500px;
+          height:100%;
+          // padding:10px 2px;
+          border:none;
+          border-style: inset;
+          border-width: 0;
+          background-color: white;
+        }
+        input:focus{
+          border:none;
+          border-style: inset;
+          border-width: 0;
+          background-color: white;
+        }
         a{
             text-decoration:none;
             color:#0095F6; 
             font-weight:600;
+            cursor:pointer;
         }  
       } 
     }

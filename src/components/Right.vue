@@ -7,7 +7,7 @@
         <h6><span>Alessandra Schiavone</span></h6>
       </div>
       <div class="premium">
-        <a href="">Passa a </a>
+        <a href="#">Passa a </a>
       </div>
       
     </div>
@@ -24,7 +24,7 @@
           <div class="name-account mx-3"><strong>{{ account.profile_name}}</strong></div>
         </div>
         <div class="follow">
-          <a href="">Segui</a>
+          <a href="#">Segui</a>
         </div>
       </div>
     </div> 
